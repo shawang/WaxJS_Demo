@@ -10,7 +10,7 @@
 
 @interface WJDigitalView ()
 
-@property (nonatomic, retain) UIImageView *noneImageView;
+@property (nonatomic, strong) UIImageView *noneImageView;
 
 @end
 
@@ -22,20 +22,20 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        _noneImageView = [[JSImageView alloc] init];
-        [self addSubview:_noneImageView];
-        _noneImageView.image = [UIImage imageNamed:@"pic_bg.png"];
-        _noneImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.noneImageView = [[JSImageView alloc] init];
+        [self addSubview:self.noneImageView];
+        self.noneImageView.image = [UIImage imageNamed:@"pic_bg.png"];
+        self.noneImageView.contentMode = UIViewContentModeScaleAspectFit;
         
-        _digitalImageView = [[JSImageView alloc] init];
-        [self addSubview:_digitalImageView];
-        _digitalImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.digitalImageView = [[JSImageView alloc] init];
+        [self addSubview:self.digitalImageView];
+        self.digitalImageView.contentMode = UIViewContentModeScaleAspectFit;
         
-        _dotImageView = [[JSImageView alloc] init];
-        [self addSubview:_dotImageView];
-        _dotImageView.image = [UIImage imageNamed:@"point.png"];
-        _dotImageView.contentMode = UIViewContentModeScaleAspectFit;
-        _dotImageView.hidden = YES;
+        self.dotImageView = [[JSImageView alloc] init];
+        [self addSubview:self.dotImageView];
+        self.dotImageView.image = [UIImage imageNamed:@"point.png"];
+        self.dotImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.dotImageView.hidden = YES;
     }
     return self;
 }
@@ -47,9 +47,9 @@
     CGFloat DOT_WIDTH = self.frame.size.width / 8;
     CGFloat DOT_HEIGHT = DOT_WIDTH * 12/10;
     
-    _noneImageView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    _digitalImageView.frame = _noneImageView.frame;
-    _dotImageView.frame = CGRectMake(self.frame.size.width-DOT_WIDTH, self.frame.size.height-DOT_HEIGHT, DOT_WIDTH, DOT_HEIGHT);
+    self.noneImageView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.digitalImageView.frame = self.noneImageView.frame;
+    self.dotImageView.frame = CGRectMake(self.frame.size.width-DOT_WIDTH, self.frame.size.height-DOT_HEIGHT, DOT_WIDTH, DOT_HEIGHT);
 }
 
 @end

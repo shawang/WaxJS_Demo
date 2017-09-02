@@ -13,8 +13,8 @@
 
 @protocol WJScreenViewExport <JSExport>
 
-@property (nonatomic, retain, readonly) NSArray *digitalViews;
-@property (nonatomic, retain, readonly) JSImageView *errorImageView;
+@property (nonatomic, strong, readonly) NSArray *digitalViews;
+@property (nonatomic, strong, readonly) JSImageView *errorImageView;
 
 @end
 

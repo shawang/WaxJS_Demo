@@ -12,8 +12,8 @@
 
 @protocol WJDigitalViewExport <JSExport>
 
-@property (nonatomic, retain) JSImageView *digitalImageView;
-@property (nonatomic, retain) JSImageView *dotImageView;
+@property (nonatomic, strong) JSImageView *digitalImageView;
+@property (nonatomic, strong) JSImageView *dotImageView;
 
 @end
 

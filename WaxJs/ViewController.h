@@ -37,7 +37,7 @@ typedef enum {
 
 @protocol ViewControllerExport <JSExport>
 
-@property (nonatomic, retain) WJScreenView *screenView;
+@property (nonatomic, strong) WJScreenView *screenView;
 
 @end
 
